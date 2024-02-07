@@ -1,7 +1,7 @@
 {
   "name": "socket-project",
   "version": "1.0.0",
-  "description": "",
+  "description": "A video chat/meeting webapp using WebRTC and WebSockets (socket.io).",
   "main": "server.js",
   "scripts": {
     "start": "react-scripts start",
@@ -12,11 +12,14 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.1",
+    "express": "^4.18.2",
     "moment": "^2.27.0",
     "mongoose": "^8.1.1",
+    "mysql": "^2.18.1",
+    "mysql2": "^3.9.1",
     "nodemon": "^2.0.4",
     "socket.io": "^2.3.0",
+    "sqlite3": "^5.1.7",
     "uuid": "^8.3.0",
     "webrtc-adapter": "^7.7.0"
   },

@@ -1,3 +1,5 @@
+const { on } = require("nodemon");
+
 // Login
 let loginBtn = document.getElementById("login");
 let logoutBtn = document.getElementById("logout");
@@ -11,7 +13,7 @@ loginBtn.addEventListener("click", () => {
   let params = {
     client_id:
       "514279368463-lgl72960c3e5kbs6uqrkcm7ufsisi2j7.apps.googleusercontent.com",
-    redirect_uri: "http://localhost:5002",
+    redirect_uri: "http://localhost:5003",
     response_type: "token",
     scope:
       "https://www.googleapis.com/auth/userinfo.profile",
@@ -46,9 +48,6 @@ if (Object.keys(params).length > 0) {
 window.history.pushState({}, document.title, "/" + "index.html");
 
 let info = JSON.parse(localStorage.getItem("authInfo"));
-// console.log(JSON.parse(localStorage.getItem("authInfo")));
-// console.log(info["access_token"]);
-// console.log(info["expires_in"]);
 
 if (info !== null) {
   fetch("https://www.googleapis.com/oauth2/v3/userinfo", {
@@ -76,7 +75,7 @@ function logout() {
     // Remove stored authentication information
     localStorage.removeItem("authInfo");
     // Redirect to the login page
-    location.href = "http://localhost:5002";
+    location.href = "http://localhost:5003";
   });
 }
 
@@ -97,17 +96,19 @@ function ProfileClicked() {
       },
     })
       .then((data) => data.json())
-      .then((userInfo) => {
-        console.log(userInfo);
-        document.getElementById("name").innerHTML += userInfo.name;
+      // .then((userInfo) => {
+      //   console.log(userInfo);
+      //   document.getElementById("name").innerHTML += userInfo.name;
 
-        // Display the profile photo
-        let profileImage = document.getElementById("image");
-        profileImage.src = userInfo.picture;
-        profileImage.alt = "Profile Picture";
+      //   // Display the profile photo
+      //   let profileImage = document.getElementById("image");
+      //   profileImage.src = userInfo.picture;
+      //   profileImage.alt = "Profile Picture";
 
-        document.getElementById("name").classList.add("nameCSS");
-        document.getElementById('login').textContent='Logout';
-      });
+      //   document.getElementById("name").classList.add("nameCSS");
+      //   document.getElementById('login').textContent='Logout';
+      // });
   }
 }
+
+

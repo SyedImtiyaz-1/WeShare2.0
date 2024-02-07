@@ -5,6 +5,8 @@ const joinBut = document.querySelector('#joinroom');
 const mic = document.querySelector('#mic');
 const cam = document.querySelector('#webcam');
 
+alert("Hello! I am an alert box!!");
+
 let micAllowed = 1;
 let camAllowed = 1;
 
