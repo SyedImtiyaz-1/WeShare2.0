@@ -1,6 +1,3 @@
-const { on } = require("nodemon");
-
-// Login
 let loginBtn = document.getElementById("login");
 let logoutBtn = document.getElementById("logout");
 
@@ -13,7 +10,7 @@ loginBtn.addEventListener("click", () => {
   let params = {
     client_id:
       "514279368463-lgl72960c3e5kbs6uqrkcm7ufsisi2j7.apps.googleusercontent.com",
-    redirect_uri: "http://localhost:5003",
+    redirect_uri: "http://localhost:5006",
     response_type: "token",
     scope:
       "https://www.googleapis.com/auth/userinfo.profile",
@@ -75,7 +72,7 @@ function logout() {
     // Remove stored authentication information
     localStorage.removeItem("authInfo");
     // Redirect to the login page
-    location.href = "http://localhost:5003";
+    location.href = "http://localhost:5006";
   });
 }
 

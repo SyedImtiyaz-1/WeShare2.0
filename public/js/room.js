@@ -599,7 +599,7 @@ socket.on('message', (msg, sendername, time) => {
     <div class="content">
         ${msg}
     </div>
-</div>`
+</div>`;
 });
 
 videoButt.addEventListener('click', () => {
